@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "UserPage";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<body>
+   
+
+
+    <section id="blog" class="container">
+        <div class="blog">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="blog-item">
+                        <div class="row">
+                          
+
+                            <div class="col-xs-12 col-sm-10 blog-content">
+                                <a href="#"><img class="img-responsive img-blog" src="~/images/My pa1.jpg" width:100%" alt="" /></a>
+                                <h4 style="color:lightsteelblue">Manage your time</h4>
+                                <p>
+                                   The key is not to prioritize what is on your schedule but to schedule your priorities
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.blog-item-->
+
+                    <div class="blog-item">
+                        <div class="row">
+                          
+                            <div class="col-sm-10 blog-content">
+                                <a href=""><img class="img-responsive img-blog" src="~/images/3.jpg" width:100%;alt="" /></a>
+                                <h4>Set your task</h4>
+                                <p>You cant avoid to miss the event.
+                                We gives you reminder and also helps you locate the address...
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.blog-item-->
+
+                   
+                 
+                </div>
+               
+
+                <aside class="col-md-4">
+                    <div class="widget search">
+                        <form role="form">
+                            <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
+                        </form>
+                    </div>
+                    <!--/.search-->
+
+                    <div class="widget categories">
+                        
+                        <div class="row" style="background-color:lightsteelblue">
+                            <h3>Recent Task</h3>
+                            <div class="col-sm-12">
+                                <div class="single_comments">
+
+                                    <p id="TaskDescrip">AllLagos 2020</p>
+                                    <div class="entry-meta small muted">
+                                        <p id="date">@DateTime.Now</p>
+                                    </div>
+                                </div>
+
+                                <div class="single_comments">
+
+                                    <p id="TaskDescrip">Inspiring Change 2020</p>
+                                    <div class="entry-meta small muted">
+                                        <p id="date">@DateTime.Now</p>
+                                    </div>
+                                </div>
+                                <div class="single_comments">
+
+                                    <p id="TaskDescrip">Shopping</p>
+                                    <p>@DateTime.Now</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.recent comments-->
+
+
+                   
+                    <!--/.categories-->
+                   
+                </aside>
+            </div>
+            <!--/.row-->
+        </div>
+    </section>
+  
+    </body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery-migrate.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.prettyPhoto.js"></script>
+    <script src="~/js/jquery.isotope.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/functions.js"></script>
+
+
+

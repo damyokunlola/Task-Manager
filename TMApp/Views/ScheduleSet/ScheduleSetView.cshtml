@@ -1,0 +1,159 @@
+﻿@model TMApp.Models.ScheduleSet
+@{
+    ViewBag.Title = "ScheduleSet";
+     Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<br /><br />
+
+<div style="height:600px; width:1000px;border-radius:10px;padding-top:20px;padding-left:50px;background-color:ghostwhite;position:center">
+    <h3 class="bg-transparent" style="color:#000000;text-align:center;padding-top:5px">Set Task</h3>
+    <div class="form-control-file" style="padding-left:30px;padding-right:30px;color:black">
+        @using (Html.BeginForm("ScheduleSet", "ScheduleSet", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken();
+
+      <div class="form-group row">
+            @Html.LabelFor(model => model.SchName, new { @class = "col-sm-2 col-form-label" })
+
+            <div class="col-sm-10">
+                @Html.TextBoxFor(model => model.SchName, new { @class = "form-control", @placeholder = "Task Description", @type = "Text", @required = "required", id = "txtName" })
+                <p style="color:red"> @Html.ValidationMessageFor(model => model.SchName)</p>
+            </div>
+        </div>
+
+          <div class="form-group row">
+            @Html.LabelFor(model => model.Categories, new { @class = "col-sm-2 col-form-label" })
+            <div class="col-sm-10">
+                @Html.DropDownListFor(model =>model.Categories,
+                       new SelectList(Enum.GetValues(typeof(TMApp.Models.TaskCategory))),"Select Task Category", 
+                              new {@class="form-control" } )
+             
+            </div>
+          </div>
+
+          <div class="form-group row">
+
+              @Html.LabelFor(model => model.Date, new { @class = "col-sm-2 col-form-label" })
+
+              <div class="col-sm-10">
+                  @Html.TextBoxFor(model => model.Date, new { @class = "form-control", @placeholder = "Task date", @type = "Text", @required = "required", id = "txtName" })
+                  <p style="color:red"> @Html.ValidationMessageFor(model => model.SchName)</p>
+              </div>
+              </div>
+              @*<div class="form-inline">
+            <label class="col-form-label">Date</label>
+
+            <div class="form-group mb-2">
+
+                <select id="date" class="form-control" required>
+                    <option selected>Day</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <select id="month" class="form-control" required>
+                    <option selected>Month</option>
+                    <option value="1">Jan</option>
+                    <option value="2">Feb</option>
+                    <option value="3">Mar</option>
+                    <option value="4">Apr</option>
+                    <option value="5">May</option>
+                    <option value="6">Jun</option>
+                    <option value="7">Jul</option>
+                    <option value="8">Aug</option>
+                    <option value="9">Sep</option>
+                    <option value="10">Oct</option>
+                    <option value="11">Nov</option>
+                    <option value="12">Dec</option>
+                </select>
+            </div>
+            <select id="Year" class="form-control   " required>
+                <option selected>Year</option>
+                <option value="1">2020</option>
+                <option value="2">2021</option>
+                <option value="3">2022</option>
+                <option value="4">2023</option>
+                <option value="5">2024</option>
+                <option value="6">2025</option>
+                <option value="7">2026</option>
+                <option value="8">2027</option>
+                <option value="9">2028</option>
+                <option value="10">2029</option>
+                <option value="11">2030</option>
+
+            </select>
+
+        </div>
+
+
+            </div>*@
+
+              <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Location</label>
+                  <div class="col-sm-10">
+                      <input type="text" class="form-control" id="location" placeholder="Location">
+                  </div>
+              </div>
+
+              <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Username</label>
+                  <div class="col-sm-10">
+                      <input type="text" class="form-control" id="Uname" placeholder="Username" requireds>
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Password</label>
+                  <div class="col-sm-10">
+                      <input type="password" class="form-control" id="pword" placeholder="........" required>
+                  </div>
+              </div>
+
+              <br />
+              <div class="form-check" style="padding-left:200px">
+                  <button type="submit" id="Set" style="background-color:lightskyblue; border-radius:5px;width:80px;height:40px;font-size:large ;padding:5px,5px,5px,5px;font-size:large">Submit</button>
+                  <button type="reset" id="Cancel" style="background-color:lightskyblue; border-radius:5px;width:80px;height:40px;font-size:large ;padding:5px,5px,5px,5px;font-size:large">Cancel</button>
+
+              </div>
+
+
+
+
+              }
+          </div>
+
+
+</div>
+
+
+
+
