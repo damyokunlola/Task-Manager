@@ -284,6 +284,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\MyScript.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -361,7 +362,6 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ContactController.cs" />
-    <Compile Include="Controllers\CreateTableController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -372,25 +372,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003081518028_InitialCreate.cs" />
-    <Compile Include="Migrations\202003081518028_InitialCreate.designer.cs">
-      <DependentUpon>202003081518028_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202004061726338_Vs6.cs" />
+    <Compile Include="Migrations\202004061726338_Vs6.designer.cs">
+      <DependentUpon>202004061726338_Vs6.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003311849158_FirstMigration.cs" />
-    <Compile Include="Migrations\202003311849158_FirstMigration.designer.cs">
-      <DependentUpon>202003311849158_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202004061807224_LatestVs.cs" />
+    <Compile Include="Migrations\202004061807224_LatestVs.designer.cs">
+      <DependentUpon>202004061807224_LatestVs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003312258262_Vs2.cs" />
-    <Compile Include="Migrations\202003312258262_Vs2.designer.cs">
-      <DependentUpon>202003312258262_Vs2.cs</DependentUpon>
+    <Compile Include="Migrations\202004091238516_VS8.cs" />
+    <Compile Include="Migrations\202004091238516_VS8.designer.cs">
+      <DependentUpon>202004091238516_VS8.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004012027278_VS3.cs" />
-    <Compile Include="Migrations\202004012027278_VS3.designer.cs">
-      <DependentUpon>202004012027278_VS3.cs</DependentUpon>
+    <Compile Include="Migrations\202004091305228_Vs9.cs" />
+    <Compile Include="Migrations\202004091305228_Vs9.designer.cs">
+      <DependentUpon>202004091305228_Vs9.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004041221373_VS4.cs" />
-    <Compile Include="Migrations\202004041221373_VS4.designer.cs">
-      <DependentUpon>202004041221373_VS4.cs</DependentUpon>
+    <Compile Include="Migrations\202004091339165_Vs10.cs" />
+    <Compile Include="Migrations\202004091339165_Vs10.designer.cs">
+      <DependentUpon>202004091339165_Vs10.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Register.cs" />
@@ -404,7 +404,6 @@
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\CreateTable\CreateTable.cshtml" />
     <Content Include="Views\Shared\_UserLayout.cshtml" />
     <Content Include="Views\UserPage\UserPage.cshtml" />
     <Content Include="Views\Profile\MyProfile.cshtml" />
@@ -442,20 +441,20 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003081518028_InitialCreate.resx">
-      <DependentUpon>202003081518028_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004061726338_Vs6.resx">
+      <DependentUpon>202004061726338_Vs6.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003311849158_FirstMigration.resx">
-      <DependentUpon>202003311849158_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004061807224_LatestVs.resx">
+      <DependentUpon>202004061807224_LatestVs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003312258262_Vs2.resx">
-      <DependentUpon>202003312258262_Vs2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004091238516_VS8.resx">
+      <DependentUpon>202004091238516_VS8.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004012027278_VS3.resx">
-      <DependentUpon>202004012027278_VS3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004091305228_Vs9.resx">
+      <DependentUpon>202004091305228_Vs9.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004041221373_VS4.resx">
-      <DependentUpon>202004041221373_VS4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004091339165_Vs10.resx">
+      <DependentUpon>202004091339165_Vs10.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

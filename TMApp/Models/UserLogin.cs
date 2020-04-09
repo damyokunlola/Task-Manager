@@ -14,9 +14,10 @@ namespace TMApp.Models
         [Key]
         public int Id { get; set; }
         [Required(ErrorMessage = "Fill this feild")]
-        public Register Username { get; set; }
+        public string Username { get; set; }
 
         [Required(ErrorMessage ="Fill this feild")]
         public string Password { get; set; }
+        public DateTime LoginDate { get; set; }
     }
 }

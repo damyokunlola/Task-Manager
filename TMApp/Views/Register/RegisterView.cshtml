@@ -6,18 +6,17 @@
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="container">
+<div class="container" style="padding-left:200px">
     <br /><br /><br />
-   <div id="registerForm" style="height:600px; width:1000px;border-radius:30px  ;background-color:ghostwhite">
+   <div id="registerForm" style="height:700px; width:800px;border-radius:30px  ;background-color:ghostwhite">
+       <br />
           <h3 class="bg-transparent" style="color:#000000;text-align:center;padding-top:10px">Sign Up</h3>
        
          @using (Html.BeginForm("Register", "Register", FormMethod.Post))
           {
              @Html.AntiForgeryToken();
    <div class="form-control-file" style="padding-left:30px; padding-top:30px;padding-right:30px;color:black">
-       <div>
-           <p style="color:red">@Html.DisplayFor(model =>model.SuccessMessage)</p>
-       </div>
+      
 
        <div class="form-group row">
            @Html.LabelFor(model => model.Name, new { @class = "col-sm-2 col-form-label" })
@@ -110,6 +109,10 @@
        <div class="form-check" style="padding-left: 200px">
            <button class="btn" @("Register") id="set" style="background-color:lightsteelblue;color:black;width:80px;height:40px;font-size:large;">Sign up</button>
            <button class="btn" id="cancel" style="background-color:lightsteelblue;color:black;width:80px;height:40px;font-size:large;">Cancel</button>
+           @Html.Raw(TempData["msg"])
+           @Html.Raw(TempData["ErrorEmail"])
+           @Html.Raw(TempData["ErrorUsername"])
+           @Html.Raw(TempData["Error"])
        </div>
 
    </div>

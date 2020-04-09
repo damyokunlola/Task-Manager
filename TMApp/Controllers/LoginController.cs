@@ -19,7 +19,7 @@ namespace TMApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Authorize(TMApp.Models.Register reg) 
+        public ActionResult Authorize(TMApp.Models.Register reg,TMApp.Models.UserLogin LogUse) 
         {
           
 
@@ -29,14 +29,32 @@ namespace TMApp.Controllers
                     var UserDetails = db.RegistersTable.Where(model => model.Username==(reg.Username) && model.Password==(reg.Password)).FirstOrDefault();
                     if (UserDetails != null)
                     {
-                    Session["Log_Username"] = reg.Username;
-                    return RedirectToAction("UserPage","Userpage");
+
+
+                    
+                    UserLogin Login = new UserLogin();
+
+                     Login.Username = reg.Username;
+                    Login.Password = reg.Password;
+
+
+                    Login.LoginDate = DateTime.Now;
+
+                    db.UserLoginsTable.Add(Login);
+                    db.SaveChanges();
+
+                 
+
+                    return RedirectToAction("UserPage","UserPage");
+                  
+                    //Session["Log_Username"] = reg.Username;
+                 
                     }
 
                     else
                     {
                        
-                        reg.ErrorMessage = "username or password incorrect";
+                      
                  
                         
                     }

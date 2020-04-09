@@ -18,9 +18,9 @@ namespace TMApp.Controllers
 
         public ViewResult GetProfile()
         {
-            
 
             return View();
+  
         }
     }
 }

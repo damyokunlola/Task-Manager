@@ -18,7 +18,10 @@ namespace TMApp.Controllers
         {
             return View();
         }
-
+        public   ActionResult LoadProfile()
+        {
+            return View ("MyProfile", "Profile");
+        }
 
     }
 }

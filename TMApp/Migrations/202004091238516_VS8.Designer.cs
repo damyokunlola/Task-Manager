@@ -7,13 +7,13 @@ namespace TMApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class Vs2 : IMigrationMetadata
+    public sealed partial class VS8 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Vs2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(VS8));
         
         string IMigrationMetadata.Id
         {
-            get { return "202003312258262_Vs2"; }
+            get { return "202004091238516_VS8"; }
         }
         
         string IMigrationMetadata.Source
