@@ -372,25 +372,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004061726338_Vs6.cs" />
-    <Compile Include="Migrations\202004061726338_Vs6.designer.cs">
-      <DependentUpon>202004061726338_Vs6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004061807224_LatestVs.cs" />
-    <Compile Include="Migrations\202004061807224_LatestVs.designer.cs">
-      <DependentUpon>202004061807224_LatestVs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004091238516_VS8.cs" />
-    <Compile Include="Migrations\202004091238516_VS8.designer.cs">
-      <DependentUpon>202004091238516_VS8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004091305228_Vs9.cs" />
-    <Compile Include="Migrations\202004091305228_Vs9.designer.cs">
-      <DependentUpon>202004091305228_Vs9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004091339165_Vs10.cs" />
-    <Compile Include="Migrations\202004091339165_Vs10.designer.cs">
-      <DependentUpon>202004091339165_Vs10.cs</DependentUpon>
+    <Compile Include="Migrations\202004102353192_vs4.cs" />
+    <Compile Include="Migrations\202004102353192_vs4.designer.cs">
+      <DependentUpon>202004102353192_vs4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Register.cs" />
@@ -441,20 +425,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004061726338_Vs6.resx">
-      <DependentUpon>202004061726338_Vs6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004061807224_LatestVs.resx">
-      <DependentUpon>202004061807224_LatestVs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004091238516_VS8.resx">
-      <DependentUpon>202004091238516_VS8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004091305228_Vs9.resx">
-      <DependentUpon>202004091305228_Vs9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004091339165_Vs10.resx">
-      <DependentUpon>202004091339165_Vs10.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004102353192_vs4.resx">
+      <DependentUpon>202004102353192_vs4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

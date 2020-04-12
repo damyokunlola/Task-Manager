@@ -10,8 +10,8 @@ namespace TMApp.Models
     [Table("tblRegister")]
     public class Register
     {
-       [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //public int id { get; set; }
         [Required(ErrorMessage ="This feild is required")]
         public string Name { get; set; }
         public string Gender { get; set; }
@@ -19,6 +19,7 @@ namespace TMApp.Models
         [Key]
         public string Email { get; set; }
         [Required(ErrorMessage = "This feild is required")]
+       
         public double PhoneNo { get; set; }
 
         [Required(ErrorMessage = "This feild is required")]
@@ -27,6 +28,7 @@ namespace TMApp.Models
         public string State { get; set; }
 
         [Required(ErrorMessage = "This feild is required")]
+        [MaxLength(20)]
         public string Username { get; set; }
 
 
