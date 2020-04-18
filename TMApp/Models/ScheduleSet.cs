@@ -39,7 +39,7 @@ namespace TMApp.Models
         Party,
         Personal,
         Religion,
-        Training,
+        
        Others
     }
     
