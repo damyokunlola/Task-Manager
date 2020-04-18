@@ -40,9 +40,9 @@
                 </div>*@
                 <br />
                 <div class="form-check" style="padding-left:100px">
-                    <button  @("Authorize")  class="btn" type="submit" id="SignUp" style="background-color:lightskyblue;width:80px;height:40px;font-size:large ;color:black">Sign In</button>
+                    <button @("Authorize") class="btn" type="submit" id="SignUp" style="background-color:lightskyblue;width:80px;height:40px;font-size:large ;color:black">Sign In</button>
                     <button class="btn" type="reset" id="Cancel" style="background-color:lightskyblue;width:80px;height:40px;font-size:large ;display:inline; color:black">Cancel</button>
-
+                    @Html.Raw(TempData["Errormsg"])
                 </div>
 
 

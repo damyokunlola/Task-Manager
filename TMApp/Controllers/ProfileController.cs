@@ -9,15 +9,18 @@ namespace TMApp.Controllers
 {
     public class ProfileController : Controller
     {
-        TMAppContext db = new TMAppContext();
+      
        
         public ActionResult MyProfile()
         {
             return View();
         }
 
-        public ViewResult GetProfile()
+        public ViewResult GetProfile( Register Userdetails)
         {
+
+            TMAppContext db = new TMAppContext();
+          
 
             return View(); 
   

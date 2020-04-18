@@ -22,47 +22,38 @@ namespace TMApp.Controllers
         public ActionResult Authorize(TMApp.Models.Register reg,TMApp.Models.UserLogin LogUse) 
         {
           
-
                 using (TMAppContext db= new TMAppContext())
                 {
-
                     var UserDetails = db.RegistersTable.Where(model => model.Username==(reg.Username) && model.Password==(reg.Password)).FirstOrDefault();
                     if (UserDetails != null)
                     {
 
-
-                    
                     UserLogin Login = new UserLogin();
 
                      Login.Username = reg.Username;
                     Login.Password = reg.Password;
-
-
                     Login.LoginDate = DateTime.Now;
 
                     db.UserLoginsTable.Add(Login);
                     db.SaveChanges();
 
-                 
 
+                    Session["Username"] = Login.Username;
                     return RedirectToAction("UserPage","UserPage");
-                  
-                    //Session["Log_Username"] = reg.Username;
-                 
                     }
 
                     else
                     {
-                       
-                      
-                 
-                        
-                    }
+                    TempData["Errormsg"] = "<script> alert('Wrong Username or Password');</script>";
+                    return View("LoginView");
+
+
+                }
 
 
                 }
            
-              return View("LoginView");
+             
         }
 
                 

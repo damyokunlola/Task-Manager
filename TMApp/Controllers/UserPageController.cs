@@ -23,5 +23,13 @@ namespace TMApp.Controllers
             return View ("MyProfile", "Profile");
         }
 
+
+        public ActionResult Userlogout()
+        {
+  
+            return RedirectToAction("LoginView","Login");
+        }
+
+
     }
 }

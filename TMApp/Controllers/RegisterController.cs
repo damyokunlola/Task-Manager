@@ -50,16 +50,13 @@ namespace TMApp.Controllers
                 else
                 {
 
-
                     var CheckEmail = db.RegistersTable.Find(reg.Email);
-                    //var CheckUsername = db.RegistersTable.Find(reg.Username);
+                 
                     if (CheckEmail == null)
                     {
                         db.RegistersTable.Add(reg);
                         db.SaveChanges();
                         //db.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.tblRegister OFF");
-
-
                         TempData["msg"] = "<script> alert('Succesfully Registered');</script>";
 
                         return RedirectToAction("RegisterView");
@@ -67,57 +64,20 @@ namespace TMApp.Controllers
                     else if (CheckEmail != null)
                     {
                         TempData["Error"] = "<script> alert('Email already Exist'); </script>";
-                        //TempData["ErrorUsername"] = "<script> alert('Username already exist');</script>";
                     }
 
-
-
-                    //else if (CheckEmail !=null)
-                    //{
-                    //    TempData["ErrorEmail"] = "<script> alert('Email already exist');</script>";
-                    //}
                     else
                     {
                         TempData["Error"] = "<script> alert('Invalid Entry'); </script>";
                     }
           }
 
-                //}
-                //else if (CheckEmail != null)
-                // {
-                //     TempData["ErrorEmail"] = "<script> alert('Email already exist');</script>";
-                //     //return View("RegisterView");
-                // }
-
-                // else if (CheckUsername != null)
-                // {
-                //     TempData["ErrorUsername"] = "<script> alert('Username already exist');</script>";
-                //     //return View("RegisterView");
-                // }
-
-                //else if (CheckUsername !=null && CheckEmail != null)
-                //{
-                //    TempData["Error"] = "<script> alert('Username and Email already exist');</script>";
-                //    //return View("RegisterView");
-                //}
-                //else
-                //{
-                //    TempData["Error"] = "<script> alert('Username and Email already exist');</script>";
-                //}
-
-
-
                 return View("RegisterView");
-
-
-
-
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
 
           
         }

@@ -376,6 +376,14 @@
     <Compile Include="Migrations\202004102353192_vs4.designer.cs">
       <DependentUpon>202004102353192_vs4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004131230185_VS1.cs" />
+    <Compile Include="Migrations\202004131230185_VS1.designer.cs">
+      <DependentUpon>202004131230185_VS1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004132221352_VS2.cs" />
+    <Compile Include="Migrations\202004132221352_VS2.designer.cs">
+      <DependentUpon>202004132221352_VS2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\ScheduleSet.cs" />
@@ -427,6 +435,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202004102353192_vs4.resx">
       <DependentUpon>202004102353192_vs4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004131230185_VS1.resx">
+      <DependentUpon>202004131230185_VS1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004132221352_VS2.resx">
+      <DependentUpon>202004132221352_VS2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

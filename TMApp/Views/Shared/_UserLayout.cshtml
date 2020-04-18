@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Task Manager</title>
 
+
     <!-- Bootstrap -->
-    
+
     <link href="~/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/css/animate.css">
     <link href="~/css/prettyPhoto.css" rel="stylesheet">
     <link href="~/css/style.css" rel="stylesheet" />
-   
+
 </head>
 
 <body>
@@ -46,12 +47,12 @@
                                 
                                 <li role="presentation">@Html.ActionLink("About", "About", "About")</li>
                                 <li role="presentation">@Html.ActionLink("Set Task", "ScheduleSetView", "ScheduleSet")</li>
-                                <li role="presentation">@Html.ActionLink("Tasks", "TaskList", "TaskList")</li>
+                                <li role="presentation">@Html.ActionLink("Tasks","TaskList","TaskList")</li>
                                 <li role="presentation">
 
                                     <img src="~/images/face5.jpg" alt="profile" />
-                                    <span class="nav-profile-name" id="Log_UserName">Louis Barnett</span>
-                                    <span> <button type="button" class=" btn btn-outline">Log Out</button></span>
+                                    <span class="nav-profile-name" id="Log_UserName" >@Session["Username"].ToString()</span>
+                                    <span> <button type="submit" id="logout" class=" btn btn-outline" >Log Out</button></span>
 
                                 </li>
 

@@ -1,12 +1,18 @@
-﻿//$((documen).ready(function () {
+﻿$(document).ready(function () {
 
 
-//    alert("Welcome to Task Manager App")
+    //    alert("Welcome to Task Manager App")
 
 
 
-//    function Unable() {
-//        alert("Operation Unsuccessful")
-//    };
+    //    function Unable() {
+    //        alert("Operation Unsuccessful")
+    //    };
 
-//})
+
+    //$("#logout").click(function () {
+    //    alert("Are you sure you want to logout");
+    //    $("#Log_UserName").hide("slow")
+    //})
+
+});

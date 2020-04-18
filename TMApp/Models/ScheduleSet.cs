@@ -12,14 +12,25 @@ namespace TMApp.Models
     public class ScheduleSet
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Display(Name ="Description")]
-        public string SchName { get; set; }
+       
+        [Required(ErrorMessage ="This field is required")]
+        public string Description { get; set; }
+        [Required(ErrorMessage = "This field is required")]
         public string Categories { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        [Required(ErrorMessage = "This field is required")]
+        public string Date { get; set; }
+        [Required(ErrorMessage = "This field is required")]
         public string Location { get; set; }
-        public Register Username { get; set; }
-        public Register Password { get; set; }
+
+        [Required(ErrorMessage = "This field is required")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "This field is required")]
+        public string Username { get; set; }
+        [Required(ErrorMessage = "This field is required")]
+        public string Password { get; set; }
     }
     public enum TaskCategory
     {
@@ -27,13 +38,9 @@ namespace TMApp.Models
         Career,
         Party,
         Personal,
+        Religion,
         Training,
        Others
     }
-    public enum Day
-    {
-
-
-
-    }
+    
 }
