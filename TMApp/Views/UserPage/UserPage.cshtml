@@ -35,16 +35,21 @@
                 </div>
                
 
-                <aside class="col-md-4">
+  <aside class="col-md-4">
                 
-                    <div>
-                        <button class="btn-link" type="submit" id="btn-profile" style="background-color:lightsteelblue;width:120px;height:40px;font-size:large ;border-radius:10px; color:black">View Profile</button>
-                    </div>
+      <div>
+       <span>
+        <input @("LoadProfile") type="button" value="View Profile"
+                style="background-color:lightsteelblue;width:120px;height:40px;font-size:large ;border-radius:10px; color:black">
+       </span>
+          <span id="UserEmail" style="color:black">@Session["Email"].ToString()</span>
+                       
+      </div>
 
-                   <br /><br />
-                    <div class="widget categories">
+        <br /><br />
+      <div class="widget categories">
 
-                        <div class="row" style="background-color:lightsteelblue">
+              <div class="row" style="background-color:lightsteelblue">
                             <h3>Recent Task</h3>
                             <div class="col-sm-12">
                                 <div class="single_comments">
@@ -75,7 +80,7 @@
                     <!--/.recent comments-->
                     <!--/.categories-->
 
-                </aside>
+  </aside>
             </div>
             <!--/.row-->
         </div>

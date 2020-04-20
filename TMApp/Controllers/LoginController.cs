@@ -36,9 +36,10 @@ namespace TMApp.Controllers
 
                     db.UserLoginsTable.Add(Login);
                     db.SaveChanges();
-
+               
 
                     Session["Username"] = Login.Username;
+                    Session["Email"] = UserDetails.Email; 
                     return RedirectToAction("UserPage","UserPage");
                     }
 
