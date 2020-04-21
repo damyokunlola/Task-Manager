@@ -21,7 +21,7 @@ namespace TMApp.Controllers
         }
 
 
-        public ActionResult LoadProfile(Register UserProfile)
+        public ActionResult LoadProfile()
         {
          
             //using (TMAppContext db = new TMAppContext())

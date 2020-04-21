@@ -3,20 +3,21 @@
     ViewBag.Title = "UserPage";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
-
-
-
-   
-
-
+@*<div class="navbar d-inline" style="background-color:grey">
+    <ul>
+        <li class="nav-profile-name"  id="Log_UserName" style="color:red">@Session["Username"].ToString()>
+         
+        </li>
+        <li> <button id="logout" class=" btn">Log Out</button></li>
+    </ul>
+</div>*@
     <section id="blog" class="container">
         <div class="blog">
             <div class="row">
                 <div class="col-md-8">
                     <div class="blog-item">
                         <div class="row">
-                          
-
+                         
                             <div class="col-xs-12 col-sm-10 blog-content">
                                 <a href="#"><img class="img-responsive img-blog" src="~/images/My pa1.jpg" width:100%" alt="" /></a>
                                 <h4 style="color:lightsteelblue">Manage your Task</h4>
@@ -28,22 +29,20 @@
                     </div>
                     <!--/.blog-item-->
 
-                   
-
-                   
-                 
                 </div>
                
 
   <aside class="col-md-4">
-                
+              
       <div>
-       <span>
-        <input @("LoadProfile") type="button" value="View Profile"
-                style="background-color:lightsteelblue;width:120px;height:40px;font-size:large ;border-radius:10px; color:black">
-       </span>
+      
+          <span>
+              <img src="~/images/face5.jpg" alt="profile" />
+          </span>
+
           <span id="UserEmail" style="color:black">@Session["Email"].ToString()</span>
-                       
+          <span style="padding-left:80px"> <button id="logout" class=" btn btn-link">Log Out</button></span>
+       
       </div>
 
         <br /><br />
@@ -85,8 +84,3 @@
             <!--/.row-->
         </div>
     </section>
-  
- 
-
-
-

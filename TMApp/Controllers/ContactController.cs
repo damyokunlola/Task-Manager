@@ -9,6 +9,10 @@ namespace TMApp.Controllers
     public class ContactController : Controller
     {
         // GET: Contact
+        public ActionResult ContactView()
+        {
+            return View();
+        }
        
     }
 }

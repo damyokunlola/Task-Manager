@@ -16,11 +16,26 @@ namespace TMApp.Controllers
             return View();
         }
 
-        public ViewResult GetProfile( Register Userdetails)
+        public ViewResult GetProfile( Register UserRecord)
         {
 
             TMAppContext db = new TMAppContext();
-          
+            var Users = db.RegistersTable.Where(m => m.Password.Equals(UserRecord.Password) && m.Username.Equals(UserRecord.Username)).FirstOrDefault();
+            if (Users !=null)
+            {
+                ViewData["Name"] = Users.Name;
+                ViewData["Email"] = Users.Email;
+                ViewData["PhoneNo"] = Users.PhoneNo;
+                ViewData["Country"] = Users.Country;
+                ViewData["State"] = Users.State;
+                ViewData["Username"] = Users.Username;
+
+            }
+            else
+            {
+               TempData["error"]="<script> alert('Error occurred');</script>";
+            }
+
 
             return View(); 
   

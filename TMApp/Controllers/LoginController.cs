@@ -38,7 +38,7 @@ namespace TMApp.Controllers
                     db.SaveChanges();
                
 
-                    Session["Username"] = Login.Username;
+                    Session["Username"] = UserDetails.Username;
                     Session["Email"] = UserDetails.Email; 
                     return RedirectToAction("UserPage","UserPage");
                     }

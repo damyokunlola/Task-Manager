@@ -48,14 +48,10 @@
                                 <li role="presentation">@Html.ActionLink("About", "About", "About")</li>
                                 <li role="presentation">@Html.ActionLink("Set Task", "ScheduleSetView", "ScheduleSet")</li>
                                 <li role="presentation">@Html.ActionLink("Tasks","TaskList","TaskList")</li>
-                                <li role="presentation">
-
-                                    <img src="~/images/face5.jpg" alt="profile" />
-                                    <span class="nav-profile-name" id="Log_UserName" >@Session["Username"].ToString()</span>
-                                    <span> <button type="submit" id="logout" class=" btn btn-outline" >Log Out</button></span>
-
+                                <li role="presentation" >@Html.ActionLink("Profile","MyProfile","Profile")
+                               
                                 </li>
-
+                                <li class="nav-profile-name"  id="Log_UserName" style="color:red">@Session["Username"].ToString()</li>
                             </ul>
                         </div>
                     </div>

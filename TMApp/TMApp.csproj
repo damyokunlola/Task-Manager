@@ -415,6 +415,7 @@
     <Content Include="Views\Login\LoginView.cshtml" />
     <Content Include="Views\ScheduleSet\ScheduleSetView.cshtml" />
     <Content Include="Views\UserPage\ChangePwd.cshtml" />
+    <Content Include="Views\Contact\ContactView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
