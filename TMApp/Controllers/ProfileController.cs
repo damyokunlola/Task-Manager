@@ -20,7 +20,7 @@ namespace TMApp.Controllers
         {
 
             TMAppContext db = new TMAppContext();
-            var Users = db.RegistersTable.Where(m => m.Password.Equals(UserRecord.Password) && m.Username.Equals(UserRecord.Username)).FirstOrDefault();
+            var Users = db.RegistersTable.Find(Session["Email"]);
             if (Users !=null)
             {
                 ViewData["Name"] = Users.Name;
