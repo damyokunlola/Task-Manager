@@ -13,15 +13,10 @@ namespace TMApp.Controllers
        
         public ActionResult MyProfile()
         {
-            return View();
-        }
-
-        public ViewResult GetProfile( Register UserRecord)
-        {
 
             TMAppContext db = new TMAppContext();
             var Users = db.RegistersTable.Find(Session["Email"]);
-            if (Users !=null)
+            if (Users != null)
             {
                 ViewData["Name"] = Users.Name;
                 ViewData["Email"] = Users.Email;
@@ -30,15 +25,24 @@ namespace TMApp.Controllers
                 ViewData["State"] = Users.State;
                 ViewData["Username"] = Users.Username;
 
+                return View(Users);
             }
             else
             {
-               TempData["error"]="<script> alert('Error occurred');</script>";
+                return HttpNotFound();
+                //TempData["error"]="<script> alert('Error occurred');</script>";
             }
 
-
-            return View(); 
-  
+            //return View();
         }
+
+        //public ActionResult GetProfile( Register UserRecord)
+        //{
+
+           
+
+     
+  
+        //}
     }
 }
