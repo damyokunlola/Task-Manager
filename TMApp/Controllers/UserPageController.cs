@@ -21,41 +21,12 @@ namespace TMApp.Controllers
         }
 
 
-        public ActionResult LoadProfile()
-        {
-         
-            //using (TMAppContext db = new TMAppContext())
-            //{
-            //    var GetProfile = db.RegistersTable.Where
-            //        (m => m.Username.Equals(UserProfile.Username) && m.Password.Equals(UserProfile.Password)).FirstOrDefault();
-            //    if (GetProfile !=null)
-            //    {
-            //        ViewData["Name"] = UserProfile.Name;
-            //        ViewData["Email"] = UserProfile.Email;
-            //        ViewData["PhoneNo"] = UserProfile.PhoneNo;
-            //        ViewData["Country"] = UserProfile.Country;
-            //        ViewData["State"] = UserProfile.State;
-            //        ViewData["Username"] = UserProfile.Username;
-
-            //    }
-            //    else
-            //    {
-            //        return View("MyProfile", "Profile");
-            //    }
-
-
-            //}
-           
-            
-
-            return RedirectToAction("MyProfile","Profile");
-    
-        }
 
         public ActionResult Userlogout()
         {
-  
-            return RedirectToAction("LoginView","Login");
+            //TempData["Logoutmsg"] = "<script> alert('Logging out?');</script>";
+
+            return RedirectToAction("Home","Home");
         }
 
     }

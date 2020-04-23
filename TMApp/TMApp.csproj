@@ -372,19 +372,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004102353192_vs4.cs" />
-    <Compile Include="Migrations\202004102353192_vs4.designer.cs">
-      <DependentUpon>202004102353192_vs4.cs</DependentUpon>
+    <Compile Include="Migrations\202004220453050_latestVs1.cs" />
+    <Compile Include="Migrations\202004220453050_latestVs1.designer.cs">
+      <DependentUpon>202004220453050_latestVs1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004131230185_VS1.cs" />
-    <Compile Include="Migrations\202004131230185_VS1.designer.cs">
-      <DependentUpon>202004131230185_VS1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004132221352_VS2.cs" />
-    <Compile Include="Migrations\202004132221352_VS2.designer.cs">
-      <DependentUpon>202004132221352_VS2.cs</DependentUpon>
+    <Compile Include="Migrations\202004221852307_Vs2.cs" />
+    <Compile Include="Migrations\202004221852307_Vs2.designer.cs">
+      <DependentUpon>202004221852307_Vs2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\ScheduleSet.cs" />
     <Compile Include="Models\TMAppContext.cs" />
@@ -410,7 +407,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\Register\RegisterView.cshtml" />
     <Content Include="Views\Login\LoginView.cshtml" />
     <Content Include="Views\ScheduleSet\ScheduleSetView.cshtml" />
@@ -434,14 +430,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004102353192_vs4.resx">
-      <DependentUpon>202004102353192_vs4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004220453050_latestVs1.resx">
+      <DependentUpon>202004220453050_latestVs1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004131230185_VS1.resx">
-      <DependentUpon>202004131230185_VS1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004132221352_VS2.resx">
-      <DependentUpon>202004132221352_VS2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004221852307_Vs2.resx">
+      <DependentUpon>202004221852307_Vs2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

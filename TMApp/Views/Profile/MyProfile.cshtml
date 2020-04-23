@@ -9,15 +9,15 @@
           <div style="height:600px; width:800px;border-radius:10px; color:black;background-color:ghostwhite;padding-left:30px;padding-right:30px">
               <h2 class="bg-transparent" style="color:#000000;text-align:center;padding-top:10px">My Profile</h2>
               <br />
-              @using (Html.BeginForm("GetProfile", "Register", FormMethod.Get))
+              @using (Html.BeginForm())
               {
 
 
               <div class="form-inline" style="float:right">
 
-                  <button class="btn btn-info" >Edit Profile</button>
+                  <button class="btn btn-info" id="editprofile" onclick="displayHide()" >Edit Profile</button>
 
-                  <button class="btn btn-info">Change Password</button>
+                  <button class="btn btn-info" id="changepwd">Change Password</button>
               </div>
               <br />
               <br />
@@ -66,8 +66,13 @@
                           @Html.TextBoxFor(model => model.State, new { @class = "form-control", @type = "text", @disabled = "disabled" })
                       </div>
                   </div>
+                  <br />
+                  <div class="form-group row" style="padding-left:250px">
+                      <span><button class="btn btn-info" type="submit" id="save" style="display:none">Save Changes</button></span>
+                      <span><button class="btn btn-info" type="reset" id="cancel" style="display:none">Cancel</button></span>
+                  </div>
               </form>
-            @Html.Raw(TempData["Error"]);
+            @Html.Raw(TempData["Error"]); 
 
               
               }
@@ -76,3 +81,16 @@
 
               
       </div>
+
+@*@section Scripts{
+    <script>
+        $("#editprofile").click(function () {
+            $("#save").show;
+            $("#clear").show;
+        });
+    </script>
+    
+    
+    }*@
+
+     

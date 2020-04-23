@@ -33,16 +33,17 @@ namespace TMApp.Controllers
                 //TempData["error"]="<script> alert('Error occurred');</script>";
             }
 
-            //return View();
+         
         }
 
-        //public ActionResult GetProfile( Register UserRecord)
-        //{
+        public ActionResult EditProfile(Register UserRecord)
+        {
 
-           
+          
+            return View();
 
-     
-  
-        //}
+
+
+        }
     }
 }
