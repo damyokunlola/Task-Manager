@@ -1,18 +1,28 @@
 ﻿
+
+    
+
 $(document).ready(function () {
 
+    //$("#save").hide();
+    //$("#clear").hide();
+
+ 
+
     $("#editprofile").click(function () {
+
         $("#save").show();
         $("#cancel").show();
-
     });
 
+   
 
 
-    //$("#logout").click(function () {
-    //    alert('Are you sure you want to log out?');
 
-    //})
+    $("#logout").click(function () {
+        alert('Are you sure you want to log out?');
+
+    })
 
   
 

@@ -15,7 +15,7 @@
 
               <div class="form-inline" style="float:right">
 
-                  <button class="btn btn-info" id="editprofile" onclick="displayHide()" >Edit Profile</button>
+                  <button class="btn btn-info" id="editprofile" onclick="EditProfile();">Edit Profile</button>
 
                   <button class="btn btn-info" id="changepwd">Change Password</button>
               </div>
@@ -30,46 +30,46 @@
                   <div class="form-group row">
                       @Html.LabelFor(model => model.Name, new { @class = "col-sm-2 col-form-label" })
                       <div class="col-sm-10">
-                          @Html.TextBoxFor(model =>model.Name, new { @class = "form-control", @type = "Text", @disabled = "disabled",})
+                          @Html.TextBoxFor(model =>model.Name, new { @class = "form-control",id="txtname", @type = "Text", @disabled = "disabled",})
                       </div>
                   </div>
                   <div class="form-group row">
                       @Html.LabelFor(model => model.Email, new { @class = "col-sm-2 col-form-label" })
                       <div class="col-sm-10">
-                          @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @type = "Email", @disabled = "disabled" })
+                          @Html.TextBoxFor(model => model.Email, new { @class = "form-control",id="txtemail", @type = "Email", @disabled = "disabled" })
                       </div>
                   </div>
                   <div class="form-group row">
                       @Html.LabelFor(model => model.PhoneNo, new { @class = "col-sm-2 col-form-label" })
                       <div class="col-sm-10">
-                          @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control", @type = "number", @disabled = "disabled" })
+                          @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control",id="txtnum", @type = "number", @disabled = "disabled" })
                       </div>
                   </div>
 
                   <div class="form-group row">
                       @Html.LabelFor(model => model.Username, new { @class = "col-sm-2 col-form-label" })
                       <div class="col-sm-10">
-                          @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @type = "text", @disabled = "disabled" })
+                          @Html.TextBoxFor(model => model.Username, new { @class = "form-control",id="txtusername", @type = "text", @disabled = "disabled" })
                       </div>
                   </div>
 
                   <div class="form-group row">
                       @Html.LabelFor(model => model.Country, new { @class = "col-sm-2 col-form-label" })
                       <div class="col-sm-10">
-                          @Html.TextBoxFor(model => model.Country, new { @class = "form-control", @type = "text", @disabled = "disabled" })
+                          @Html.TextBoxFor(model => model.Country, new { @class = "form-control",id="txtcountry", @type = "text", @disabled = "disabled" })
                       </div>
                   </div>
 
                   <div class="form-group row">
                       @Html.LabelFor(model => model.State, new { @class = "col-sm-2 col-form-label" })
                       <div class="col-sm-10">
-                          @Html.TextBoxFor(model => model.State, new { @class = "form-control", @type = "text", @disabled = "disabled" })
+                          @Html.TextBoxFor(model => model.State, new { @class = "form-control",id="txtstate", @type = "text", @disabled = "disabled" })
                       </div>
                   </div>
                   <br />
                   <div class="form-group row" style="padding-left:250px">
-                      <span><button class="btn btn-info" type="submit" id="save" style="display:none">Save Changes</button></span>
-                      <span><button class="btn btn-info" type="reset" id="cancel" style="display:none">Cancel</button></span>
+                      <span><button class="btn btn-info" type="submit" id="save"  style="display:none">Save Changes</button></span>
+                      <span><button class="btn btn-info" type="reset"   id="cancel" style="display:none">Cancel</button></span>
                   </div>
               </form>
             @Html.Raw(TempData["Error"]); 
@@ -82,15 +82,6 @@
               
       </div>
 
-@*@section Scripts{
-    <script>
-        $("#editprofile").click(function () {
-            $("#save").show;
-            $("#clear").show;
-        });
-    </script>
-    
-    
-    }*@
+
 
      

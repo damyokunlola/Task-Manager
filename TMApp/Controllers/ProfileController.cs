@@ -38,12 +38,17 @@ namespace TMApp.Controllers
 
         public ActionResult EditProfile(Register UserRecord)
         {
-
           
             return View();
 
 
 
         }
+
+
+
+
+
     }
+    
 }
