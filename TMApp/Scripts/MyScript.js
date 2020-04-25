@@ -9,11 +9,11 @@ $(document).ready(function () {
 
  
 
-    $("#editprofile").click(function () {
+    //$("#editprofile").click(function () {
 
-        $("#save").show();
-        $("#cancel").show();
-    });
+    //    $("#save").show();
+    //    $("#cancel").show();
+    //});
 
    
 
