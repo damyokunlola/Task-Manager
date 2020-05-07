@@ -271,20 +271,20 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="images\top-view-woman-sitting-her-600w-557099440.webp" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.4.1.js" />
-    <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Scripts\jquery-3.5.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.0.js" />
+    <Content Include="Scripts\jquery-3.5.0.min.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.0.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\MyScript.js" />
+    <Content Include="js\MyScript.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -368,6 +368,7 @@
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ScheduleSetController.cs" />
     <Compile Include="Controllers\TaskListController.cs" />
+    <Compile Include="Controllers\UpdateProfileController.cs" />
     <Compile Include="Controllers\UserPageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -379,6 +380,18 @@
     <Compile Include="Migrations\202004221852307_Vs2.cs" />
     <Compile Include="Migrations\202004221852307_Vs2.designer.cs">
       <DependentUpon>202004221852307_Vs2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004271949011_VS3.cs" />
+    <Compile Include="Migrations\202004271949011_VS3.designer.cs">
+      <DependentUpon>202004271949011_VS3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004280102207_VS4.cs" />
+    <Compile Include="Migrations\202004280102207_VS4.designer.cs">
+      <DependentUpon>202004280102207_VS4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005060641022_VS5.cs" />
+    <Compile Include="Migrations\202005060641022_VS5.designer.cs">
+      <DependentUpon>202005060641022_VS5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -396,7 +409,6 @@
     <Content Include="Views\Shared\_UserLayout.cshtml" />
     <Content Include="Views\UserPage\UserPage.cshtml" />
     <Content Include="Views\Profile\MyProfile.cshtml" />
-    <Content Include="Views\TaskList\TaskList.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
@@ -410,8 +422,10 @@
     <Content Include="Views\Register\RegisterView.cshtml" />
     <Content Include="Views\Login\LoginView.cshtml" />
     <Content Include="Views\ScheduleSet\ScheduleSetView.cshtml" />
-    <Content Include="Views\UserPage\ChangePwd.cshtml" />
     <Content Include="Views\Contact\ContactView.cshtml" />
+    <Content Include="Views\Profile\PasswordView.cshtml" />
+    <Content Include="Views\UpdateProfile\UpdateProfileView.cshtml" />
+    <Content Include="Views\TaskList\TaskList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -435,6 +449,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004221852307_Vs2.resx">
       <DependentUpon>202004221852307_Vs2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004271949011_VS3.resx">
+      <DependentUpon>202004271949011_VS3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004280102207_VS4.resx">
+      <DependentUpon>202004280102207_VS4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005060641022_VS5.resx">
+      <DependentUpon>202005060641022_VS5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

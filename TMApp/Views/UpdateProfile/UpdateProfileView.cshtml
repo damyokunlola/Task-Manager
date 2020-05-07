@@ -1,0 +1,93 @@
+﻿@model TMApp.Models.Register
+@{
+    ViewBag.Title = "UpdateProfileView";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<br /><br />
+<section class="container">
+    <fieldset style="border-radius:10px; color:black;background-color:ghostwhite;padding-left:30px;padding-right:30px">
+        <h2 class="bg-transparent" style="color:#000000;text-align:center;padding-top:10px">My Profile</h2>
+        <br /><br />
+
+              <div>
+                  <span id="UserEmail" style="color:black">@Session["Email"].ToString()</span>
+              </div>
+        <div class="form-inline" style="float:right">
+
+                      <input type="button" value="Change Password" class="btn btn-link" id="changepwd"
+                   onclick="location.href='@Url.Action("PasswordView","Profile")'" />
+        </div>
+        <br />
+        <br />
+
+        @using (Html.BeginForm("UpdateProfile","UpdateProfile",FormMethod.Post))
+        {
+            @Html.AntiForgeryToken();
+        
+
+            <br /><br />
+
+            @*<form class="form-control-file" style="padding-left:30px; padding-top:30px;padding-right:30px;color:black">*@
+
+
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Name, new { @class = "col-sm-2 col-form-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", id = "txtname", @type = "Text",})
+                </div>
+                <p style="color:red"> @Html.ValidationMessageFor(model => model.Name)</p>
+            </div> 
+           
+            <div class="form-group row">
+                @Html.LabelFor(model => model.PhoneNo, new { @class = "col-sm-2 col-form-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control", id = "txtnum", @type = "number" })
+                </div>
+                <p style="color:red"> @Html.ValidationMessageFor(model => model.PhoneNo)</p>
+            </div>
+
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Username, new { @class = "col-sm-2 col-form-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Username, new { @class = "form-control", id = "txtusername", @type = "text", })
+                </div>
+                <p style="color:red"> @Html.ValidationMessageFor(model => model.Username)</p>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(model => model.Country, new { @class = "col-sm-2 col-form-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Country, new { @class = "form-control", @placeholder = "Country", @type = "Text", id = "txtCountry" })
+
+
+                </div>
+                <p style="color:red"> @Html.ValidationMessageFor(model => model.Country)</p>
+            </div>
+
+            <div class="form-group row">
+                @Html.LabelFor(model => model.State, new { @class = "col-sm-2 col-form-label" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.State, new { @class = "form-control", @placeholder = "State", @type = "Text", id = "txtState" })
+
+
+                </div>
+                <p style="color:red"> @Html.ValidationMessageFor(model => model.State)</p>
+            </div>
+
+            <br />
+            <div class="form-group row" style="padding-left:250px">
+                <span><button class="btn btn-info" type="submit" id="save">Save Changes</button></span>
+               
+                <br /><br /><br />
+            </div>
+
+            @*@Html.Raw(TempData["Error"]);*@
+            @Html.Raw(TempData["editmsg"]);
+
+        }
+    </fieldset>
+
+</section>
+
+
+

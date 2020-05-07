@@ -4,51 +4,53 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section id="contact-page">
-    <div class="container">
-        <div class="center">
-            <br /><br /><br />
-            <h2>Message</h2>
+<div class="container">
+    <div class="center" style="background-color:whitesmoke;border-radius:8px" >
+        <br /><br /><br />
+        <h2>Message</h2>
 
+        <br /><br />
+
+        @*<div style="background-color:whitesmoke;border-radius:8px;">*@
+            <br /><br /><br /><br />
+            @using (Html.BeginForm("Message", "Contact", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div >
+                <div class="form-group">
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control ", type = "text", id = "name", placeholder = "Your Name" })
+
+                    <p class="validation"> @Html.ValidationMessageFor(model => model.Name)</p>
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", type = "email", id = "email", placeholder = "Your Email", })
+
+                    <p class="validation"> @Html.ValidationMessageFor(model => model.Email)</p>
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(model => model.Subject, new { @class = "form-control", type = "text", id = "subject", placeholder = "Subject", })
+
+
+                </div>
+                <div class="form-group">
+                    @Html.TextAreaFor(model => model.Message, new { @class = "form-control", type = "text", id = "message", placeholder = "Message", })
+                    <p class="validation">@Html.ValidationMessageFor(model => model.Message)</p>
+
+                </div>
+                <div class="text-center">
+                    <button @("Message") type="submit" class="btn btn-lg" style=" background-color:lightsteelblue;color:black" required="required">Submit Message</button>
+                </div>
+
+                @Html.Raw(TempData["msg"])
+                    </div>
+            }
         </div>
-        <div style="padding-left:250px">
-            <div style="width:600px;height:400px;background-color:whitesmoke;padding-left:50px;padding-right:50px;border-radius:8px">
-                <br /><br /><br /><br />
-                @using (Html.BeginForm("Message", "Contact", FormMethod.Post))
-                {
-                    @Html.AntiForgeryToken()
-                    <div class="form-group">
-                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", type = "text", id = "name", placeholder = "Your Name", })
 
-                        <p class="validation"> @Html.ValidationMessageFor(model => model.Name)</p>
-                    </div>
-                    <div class="form-group">
-                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", type = "email", id = "email", placeholder = "Your Email", })
-
-                        <p class="validation"> @Html.ValidationMessageFor(model => model.Email)</p>
-                    </div>
-                    <div class="form-group">
-                        @Html.TextBoxFor(model => model.Subject, new { @class = "form-control", type = "text", id = "subject", placeholder = "Subject", })
-
-
-                    </div>
-                    <div class="form-group">
-                        @Html.TextAreaFor(model => model.Message, new { @class = "form-control", type = "text", id = "message", placeholder = "Message", })
-                        <p class="validation">@Html.ValidationMessageFor(model => model.Message)</p>
-
-                    </div>
-                    <div class="text-center">
-                        <button @("Message") type="submit" class="btn btn-lg" style=" background-color:lightsteelblue;color:black" required="required">Submit Message</button>
-                    </div>
-
-                    @Html.Raw(TempData["msg"])
-                }
-            </div>
-        </div>
-       
-     
     </div>
+        
+           
+      
     
-</section>
+
 
 

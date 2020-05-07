@@ -10,7 +10,6 @@ namespace TMApp.Controllers
     public class RegisterController : Controller
     {
 
-
         
         public ActionResult RegisterView()
         {
@@ -36,22 +35,12 @@ namespace TMApp.Controllers
                
                 reg.Username = model.Username;
                 reg.Password = model.Password;
+                reg.DateRegistered = DateTime.Today;
 
-          if (reg.Password.Length < 5)
+                if (ModelState.IsValid)
                 {
-                    TempData["StringPLen"] = "<script> alert('Password must be at least 5 characters');</script>";
-                  
-                }
-
-                else if (reg.Username.Length < 8)
-                {
-                    TempData["StringULen"] = "<script> alert('Username must be at least 8 characters')</script>";
-                }
-                else
-                {
-
                     var CheckEmail = db.RegistersTable.Find(reg.Email);
-                 
+
                     if (CheckEmail == null)
                     {
                         db.RegistersTable.Add(reg);
@@ -65,21 +54,28 @@ namespace TMApp.Controllers
                     {
                         TempData["Error"] = "<script> alert('Email already Exist'); </script>";
                     }
-
                     else
                     {
                         TempData["Error"] = "<script> alert('Invalid Entry'); </script>";
                     }
-          }
 
-                return View("RegisterView");
+
+                }
+          
+               
             }
             catch (Exception ex)
             {
                 throw ex;
             }
 
-          
+            return View("RegisterView");
+        }
+
+       public ActionResult Clear()
+        {
+
+            return View();
         }
 
     }

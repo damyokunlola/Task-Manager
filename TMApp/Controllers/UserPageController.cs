@@ -15,13 +15,6 @@ namespace TMApp.Controllers
             return View();
         }
 
-        public ActionResult ChangePwd()
-        {
-            return View();
-        }
-
-
-
         public ActionResult Userlogout()
         {
             //TempData["Logoutmsg"] = "<script> alert('Logging out?');</script>";

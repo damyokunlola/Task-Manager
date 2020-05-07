@@ -14,12 +14,13 @@
     <link href="~/css/prettyPhoto.css" rel="stylesheet">
     <link href="~/css/style.css" rel="stylesheet" />
  
+
 </head>
 
 <body>
     <header style="background-color:dodgerblue">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="navigation"  style="background-color:lightsteelblue;">
+            <div class="navigation" style="background-color:lightsteelblue;">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
@@ -51,10 +52,11 @@
     <br /><br />
 
     @RenderBody();
-
+   
+    @RenderSection("MyScript",required:false)
     <br />
     <footer>
-        <div class="footer"  style="background-color:lightsteelblue;">
+        <div class="footer" style="background-color:lightsteelblue;">
             <div class="container">
                 <div class="social-icon">
                     <div class="col-md-4">
@@ -88,11 +90,12 @@
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/js/jquery-migrate.min.js"></script>
-    
+
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/jquery.prettyPhoto.js"></script>
     <script src="~/js/jquery.isotope.min.js"></script>
     <script src="~/js/wow.min.js"></script>
     <script src="~/js/functions.js"></script>
+    <script src="~/js/MyScript.js"></script>
 </body>
 </html>

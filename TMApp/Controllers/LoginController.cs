@@ -19,7 +19,7 @@ namespace TMApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Authorize(TMApp.Models.Register reg,TMApp.Models.UserLogin LogUse) 
+        public ActionResult Authorize(Register reg,UserLogin Login) 
         {
           
                 using (TMAppContext db= new TMAppContext())
@@ -28,7 +28,6 @@ namespace TMApp.Controllers
                     if (UserDetails != null)
                     {
 
-                    UserLogin Login = new UserLogin();
 
                      Login.Username = reg.Username;
                     Login.Password = reg.Password;
