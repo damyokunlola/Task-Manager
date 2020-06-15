@@ -3,81 +3,79 @@
     ViewBag.Title = "UserPage";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
-<br /><br /><br />
-            <div style="float:right">
-
-                <span>
-                    <img src="~/images/face5.jpg" alt="profile" />
-                </span>
-
-                <span id="UserEmail" style="color:black">@Session["Email"].ToString()</span>
-                
-              
-                     
-             
-                       
-                  
-                    
-            </div>
-
-<br /><br/>
-<section id="blog" class="container">
-    <div class="blog">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="blog-item">
-                    <div class="row">
-
-                        <div class="col-xs-12 col-sm-10 blog-content">
-                            <a href="#"><img class="img-responsive img-blog" src="~/images/My pa1.jpg" width:100%" alt="" /></a>
-                            <h4 style="color:lightsteelblue">Manage your Task</h4>
-                            @*<p>
-                                   The key is not to prioritize what is on your schedule but to schedule your priorities
-                                </p>*@
-                        </div>
-                    </div>
-                </div>
-                <!--/.blog-item-->
-
-            </div>
 
 
-            <aside class="col-md-4">
+    <section class="home_banner_area">
 
-                >
-                <div class="widget categories">
+        <div class="banner_inner d-flex align-items-center"  style="background-color:#fff !important">
+            <div class="overlay"></div>
 
-                    <div class="row" style="background-color:lightsteelblue">
-                        <h3>Recent Task</h3>
-                        <div class="col-sm-12">
-                            <div class="single_comments">
+            <div class="container">
+                @*<div class="fa-pull-right">
+                    <span>@Session["Email"].ToString()</span>
+                    <span class="genric-btn danger medium">@Html.ActionLink("Logout", "LoginView", "Login")</span>
+                </div>*@
+                <section id="blog" class="container">
+                    <div class="blog">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="blog-item">
+                                    <div class="row">
 
-                                <p id="TaskDescrip">AllLagos 2020</p>
-                                <div class="entry-meta small muted">
-                                    <p id="date">@DateTime.Now</p>
+                                        <div class="col-xs-12 col-sm-10 blog-content">
+                                            <a href="#"><img class="img-responsive img-blog" src="~/images/My pa1.jpg" width:100%" alt="" /></a>
+                                            <h4 style="color:lightsteelblue">Manage your Task</h4>
+                                            <p>
+                                                The key is not to prioritize what is on your schedule but to schedule your priorities
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
+                                <!--/.blog-item-->
                             </div>
 
-                            <div class="single_comments">
 
-                                <p id="TaskDescrip">Inspiring Change 2020</p>
-                                <div class="entry-meta small muted">
-                                    <p id="date">@DateTime.Now</p>
+                            <aside class="col-md-4">
+                                <div class="widget categories">
+
+                                    <div class="row">
+                                        <h3>Recent Task</h3>
+                                        <div class="col-sm-12">
+                                            <div class="single_comments">
+
+                                                <p id="TaskDescrip">AllLagos 2020</p>
+                                                <div class="entry-meta small muted">
+                                                    <p id="date">@DateTime.Now</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="single_comments">
+
+                                                <p id="TaskDescrip">Inspiring Change 2020</p>
+                                                <div class="entry-meta small muted">
+                                                    <p id="date">@DateTime.Now</p>
+                                                </div>
+                                            </div>
+                                            <div class="single_comments">
+
+                                                <p id="TaskDescrip">Shopping</p>
+                                                <p>@DateTime.Now</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="single_comments">
-
-                                <p id="TaskDescrip">Shopping</p>
-                                <p>@DateTime.Now</p>
-                            </div>
-
+                                @Html.Raw(TempData["Logoutmsg"])
+                            </aside>
                         </div>
-
+                        <!--/.row-->
                     </div>
-                </div>
-                @Html.Raw(TempData["Logoutmsg"])
-            </aside>
-        </div>
-        <!--/.row-->
-    </div>
-</section>
+                </section>
+            </div>
+                                    </div>
+                </section>
+
+
+
+

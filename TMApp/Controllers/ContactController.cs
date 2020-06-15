@@ -34,7 +34,7 @@ namespace TMApp.Controllers
            
             db.SaveChanges();
 
-            TempData["msg"] = "<script> alert('Succesfully Registered');</script>";
+            TempData["msg"] = "<script> alert('Message Sent');</script>";
             return RedirectToAction("ContactView");
         }
        

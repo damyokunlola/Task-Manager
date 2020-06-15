@@ -25,7 +25,7 @@ namespace TMApp.Controllers
         }
 
 
-        public ActionResult Contact()
+        public ActionResult AboutView()
         {
             return View();
         }

@@ -20,17 +20,18 @@ namespace TMApp.Models
         [Required(ErrorMessage = "This field is required")]
         public string Categories { get; set; }
         [Required(ErrorMessage = "This field is required")]
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
         [Required(ErrorMessage = "This field is required")]
         public string Location { get; set; }
 
         [Required(ErrorMessage = "This field is required")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "This field is required")]
-        public string Username { get; set; }
-        [Required(ErrorMessage = "This field is required")]
-        public string Password { get; set; }
+        //[Required(ErrorMessage = "This field is required")]
+        //public string Username { get; set; }
+        //[Required(ErrorMessage = "This field is required")]
+        //public string Password { get; set; }
+        public string Status { get; set; }
     }
     public enum TaskCategory
     {

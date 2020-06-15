@@ -27,12 +27,14 @@ namespace TMApp.Controllers
             newTask.Categories = Task.Categories;
             newTask.Date =Task.Date;
             newTask.Location = Task.Location;
-            newTask.Email = Task.Email;
-            newTask.Username = Task.Username;
-            newTask.Password = Task.Password;
+             newTask.Email = Task.Email;
+            //newTask.Username = Task.Username;
+            //newTask.Password = Task.Password;
+            Task.Status = "Active";
 
-            var CheckUser = db.RegistersTable.Where(m => m.Username.Equals(Task.Username) && m.Password.Equals(Task.Password)).FirstOrDefault();
-            if(CheckUser!=null)
+            var CheckUser = db.RegistersTable.Where(m=>m.Email.Equals(Task.Email));
+           // var CheckUser = db.RegistersTable.Where(m => m.Username.Equals(Task.Username) && m.Password.Equals(Task.Password)).FirstOrDefault();
+            if (CheckUser!=null)
             {
                 db.ScheduleSetsTable.Add(newTask);
                 db.SaveChanges();
@@ -43,8 +45,8 @@ namespace TMApp.Controllers
             }
             else
             {
-                TempData["Errormsg"]="<script> alert('Wrong Username or Password');</script>";
-                return View("ScheduleSetView");
+               TempData["Errormsg"]="<script> alert('Email not registered');</script>";
+               return View("ScheduleSetView");
             }
 
        

@@ -1,7 +1,8 @@
 ﻿  
 $(document).ready(function () {
-    alert('welcome');
-   
+    alert("Welcome");
+
+
     $("#UserimgId").on("change", function () {
         //alert("Onchange event fired");
 
@@ -18,38 +19,43 @@ $(document).ready(function () {
         };
         fileReader.readAsDataURL(firstFile);
     });
+  
+    //$(function () {
+    //    $("#datepicker").datepicker();
+    //});
 
 
-    $("#RegCancel").click(function () {
-        $("#txtName").val("");
-        $("#txtEmail").val("");
-        $("#txtState").val("");
-        $("#txtCountry").val("");
-        $("#txtUsername").val("");
-        $("#txtpassword").val("");
-        $("#txtPhoneNo").val("");
-        $("#UserImg").val("");
-        $("#UserimgId").val("");
-    });
+    //$("#RegCancel").click(function () {
+    //    $("#txtName").val("");
+    //    $("#txtEmail").val("");
+    //    $("#txtState").val("");
+    //    $("#txtCountry").val("");
+    //    $("#txtUsername").val("");
+    //    $("#txtpassword").val("");
+    //    $("#txtPhoneNo").val("");
+    //    $("#UserImg").val("");
+    //    $("#UserimgId").val("");
+    //});
 
 
-    $("#TaskCancel").click(function () {
-        $("#txtDescription").val("");
-        $("#txtEmail").val("");
-        $("#txtLocation").val("");
-        $("#txtDate").val("");
-        $("#txtUsername").val("");
-        $("#txtPwd").val("");
+    //$("#TaskCancel").click(function () {
+    //    $("#txtDescription").val("");
+    //    $("#txtEmail").val("");
+    //    $("#txtLocation").val("");
+    //    $("#txtDate").val("");
+    //    $("#txtUsername").val("");
+    //    $("#txtPwd").val("");
        
-    });
+    //});
 
 
-    $("#LogCancel").click(function () {
+    //$("#LogCancel").click(function () {
        
-        $("#txtUsername").val("");
-        $("#txtPwd").val("");
+    //    $("#txtUsername").val("");
+    //    $("#txtPwd").val("");
       
-    });
+    //});
+    
 
 
 

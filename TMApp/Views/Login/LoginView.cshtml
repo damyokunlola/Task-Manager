@@ -1,64 +1,116 @@
 ﻿@model TMApp.Models.Register
-    
 @{
-    ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
-    <div class="container">
-        <br /><br /><br /><br /><br />
-        @*<div id="Login-Div" style="border-radius:10px;background-color:ghostwhite">*@
-            <br />
-            <fieldset id="Login-Div" style="border-radius:10px;background-color:ghostwhite;width:500px;height:500px">
-                <h2 class="bg-transparent" style="color:#000000;text-align:center;padding-top:10px">Sign In</h2>
-                <br />
-                @using (Html.BeginForm("Authorize", "Login", FormMethod.Post))
-                {
-                    @Html.AntiForgeryToken();
-                    <div class="form-control-file" id="login" style="padding-left:20px;padding-right:20px">
 
 
-                        <div class="form-group row" style="color:black">
-                            @Html.LabelFor(model => model.Username, new { @class = "col-sm-2 col-form-label" })
-                            <div class="col-sm-10">
-                                @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @placeholder = "Username", @type = "text",id="txtUsername" })
-                            </div>
-                            <p style="color:red"> @Html.ValidationMessageFor(model => model.Username)</p>
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="~/img/favicon.png" type="image/png">
+    <title>Task Manager</title>
+
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="~/vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/vendors/animate-css/animate.css">
+
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <link rel="stylesheet" href="~/css/main.css">
+   
+</head>
+
+<body style="background:url(/img/background/._dot-pattern.jpg) repeat;">
+
+
+    <div data-overlay class="min-vh-100 d-flex flex-column justify-content-md-center" style="padding-top: 80px !important;">
+        <section class="py-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-4 col-lg-5 col-md-6">
+                        <div class="card card-body shadow">
+                            <h1 class="h5 text-center" style="margin-bottom: 1rem;">Sign In</h1>
+                            @using (Html.BeginForm("Authorize", "Login", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken();
+                                <div class="form-control-file" id="login" style="padding-left:20px;padding-right:20px">
+
+
+                                    <div class="form-group row" style="color:black">
+
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @placeholder = "Username", @type = "text", id = "txtUsername" })
+                                        </div>
+                                        <p style="color:red"> @Html.ValidationMessageFor(model => model.Username)</p>
+                                    </div>
+                                    <br />
+
+
+                                    <div class="form-group row" style="color:black">
+
+                                        <div class="col-sm-10">
+                                            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @placeholder = "...........", @type = "password", id = "txtPwd" })
+                                        </div>
+                                        <p style="color:red"> @Html.ValidationMessageFor(model => model.Password)</p>
+                                    </div>
+                                    
+                                    <br />
+                                    <div class="form-group">
+
+                                        <button @("Authorize") class="btn btn-primary btn-block" type="submit" id="SignUp" style="background-color: #db4c3f; border-color: #db4c3f;">Sign In</button>
+                                        <div class="text-center text-small mt-3" style="color: #db4c3f;">
+                                            Don't have an account? @Html.ActionLink("Sign Up here","RegisterView","Register")
+                                        </div>
+
+                                        @Html.Raw(TempData["Errormsg"])
+                                    </div>
+
+                                </div>
+                            }
+
+
                         </div>
-                        <br />
-
-
-                        <div class="form-group row" style="color:black">
-                            @Html.LabelFor(model => model.Password, new { @class = "col-sm-2 col-form-label", })
-                            <div class="col-sm-10">
-                                @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @placeholder = "...........", @type = "password",id="txtPwd" })
-                            </div>
-                            <p style="color:red"> @Html.ValidationMessageFor(model => model.Password)</p>
-                        </div>
-                        <br />
-                        @*<div>
-                   <p style="color:red">@Html.DisplayFor(model=>model.ErrorMessage)</p>
-                </div>*@
-                        <br />
-                        <div class="form-check" style="padding-left:100px">
-                            <button @("Authorize") class="btn" type="submit" id="SignUp" style="background-color:lightskyblue;width:80px;height:40px;font-size:large ;color:black">Sign In</button>
-                            <button class="btn" type="reset" id="LogCancel" style="background-color:lightskyblue;width:80px;height:40px;font-size:large ;display:inline; color:black">Cancel</button>
-                            @Html.Raw(TempData["Errormsg"])
-                        </div>
-
-
-
-
-
 
                     </div>
-                }
-            </fieldset>
+                </div>
+            </div>
+        </section>
+    </div>
 
-            
-        @*</div>*@
 
+    <div class="background">
+        <div class="leftLarge">
+
+        </div>
+        <div class="rightLarge">
+        </div>
     </div>
 
 
 
 
+
+    <script src="~/js/jquery-2.2.4.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/popper.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/bootstrap.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/vendors/owl-carousel/owl.carousel.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/jquery.ajaxchimp.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/waypoints.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/mail-script.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/contact.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/jquery.form.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/jquery.validate.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/mail-script.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/theme.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+
+
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" 
+            data-cf-settings="ab3c4cb7254640bc182b1ba0-|49" defer=""></script>
+</body>
+
+</html>

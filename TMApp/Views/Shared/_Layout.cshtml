@@ -1,101 +1,107 @@
-﻿<!DOCTYPE html>
+﻿
+<!doctype html>
 <html lang="en">
-
 <head>
+
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="~/img/favicon.png" type="image/png">
     <title>Task Manager</title>
 
-    <!-- Bootstrap -->
-    <link href="~/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="~/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/css/animate.css">
-    <link href="~/css/prettyPhoto.css" rel="stylesheet">
+
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="~/vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/vendors/animate-css/animate.css">
+
+
+
     <link href="~/css/style.css" rel="stylesheet" />
- 
+    <link rel="stylesheet" href="~/css/responsive.css">
 
+    <script src="~/js/MyScript.js"></script>
 </head>
-
 <body>
-    <header style="background-color:dodgerblue">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="navigation" style="background-color:lightsteelblue;">
+
+    <header class="header_area">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg " style="background-color:mediumslateblue">
                 <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <div class="navbar-brand" style="color:blue">
-                            <a href="index.html"><h1>TASK MANAGER</h1></a>
-                        </div>
-                    </div>
 
-                    <div class="navbar-collapse collapse">
-                        <div class="menu">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation">@Html.ActionLink("Home", "Home", "Home")</li>
-                                <li role="presentation">@Html.ActionLink("Sign Up", "RegisterView", "Register")</li>
-                                <li role="presentation">@Html.ActionLink("About", "About", "About")</li>
-                                <li role="presentation">@Html.ActionLink("Sign In", "LoginView", "Login")</li>
-                                <li role="presentation">@Html.ActionLink("Contact", "ContactView", "Contact")</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <br /><br />
+                    <a class="navbar-brand logo_h" href="index.html"><img src="~/img/logo.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-    @RenderBody();
-   
-    @RenderSection("MyScript",required:false)
-    <br />
-    <footer>
-        <div class="footer" style="background-color:lightsteelblue;">
-            <div class="container">
-                <div class="social-icon">
-                    <div class="col-md-4">
-                        <ul class="social-network">
-                            <li><a href="#" class="fb tool-tip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class="twitter tool-tip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="gplus tool-tip" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#" class="linkedin tool-tip" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#" class="ytube tool-tip" title="You Tube"><i class="fa fa-youtube-play"></i></a></li>
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item">@Html.ActionLink("Home", "Home", "Home", null, new { @class = "nav-link" })</li>
+                            <li class="nav-item">@Html.ActionLink("About Us", "AboutView", "Home", null, new { @class = "nav-link" })
+                            <li class="nav-item">@Html.ActionLink("Contact Us", "ContactView", "Contact", null, new { @class = "nav-link" })</li>
+                        </ul>
+                    </div>
+                    <div class="right-button">
+                        <ul>
+                            <li class="genric-btn danger medium">@Html.ActionLink("Login", "LoginView", "Login")</li>
+
+                            <li class="genric-btn danger medium">@Html.ActionLink("Register", "RegisterView", "Register")</li>
                         </ul>
                     </div>
                 </div>
+            </nav>
+        </div>
+    </header>
 
-                <div class="col-md-4 col-md-offset-4">
-                    <div class="copyright">
-                        &copy;Damilola Okunlola. All Rights Reserved.
 
-                    </div>
+    @RenderBody();
+
+    @*@RenderSection("scripts", required: false)*@
+
+
+    <footer class="footer-area">
+        <div class="container">
+
+            <div class="footer-bottom row align-items-center text-center text-lg-left no-gutters">
+                <p class="footer-text m-0 col-lg-8 col-md-12">
+                    Copyright ©
+                    <script type="5b4f23bc0a6c1f9f4e183589-text/javascript">document.write(new Date().getFullYear());</script> Damilola Okunlola. All rights reserved.
+                </p>
+                <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
+                    <a href="#"><i class="ti-facebook"></i></a>
+                    <a href="#"><i class="ti-twitter-alt"></i></a>
+                    <a href="#"><i class="ti-dribbble"></i></a>
+                    <a href="#"><i class="ti-linkedin"></i></a>
                 </div>
-            </div>
-
-            <div class="pull-right">
-                <a href="#home" class="scrollup"><i class="fa fa-angle-up fa-3x"></i></a>
             </div>
         </div>
     </footer>
 
 
-    <script src="~/js/jquery.min.js"></script>
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <script src="~/js/jquery-migrate.min.js"></script>
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/js/jquery-2.2.4.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/popper.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/bootstrap.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/vendors/owl-carousel/owl.carousel.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/jquery.ajaxchimp.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/waypoints.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/mail-script.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/contact.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/jquery.form.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/jquery.validate.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/mail-script.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/theme.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
 
-    <script src="~/js/bootstrap.min.js"></script>
-    <script src="~/js/jquery.prettyPhoto.js"></script>
-    <script src="~/js/jquery.isotope.min.js"></script>
-    <script src="~/js/wow.min.js"></script>
-    <script src="~/js/functions.js"></script>
-    <script src="~/js/MyScript.js"></script>
+
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
+            data-cf-settings="ab3c4cb7254640bc182b1ba0-|49" defer=""></script>
+
+  
 </body>
+
 </html>
+

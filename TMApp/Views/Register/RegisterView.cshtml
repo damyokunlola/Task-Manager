@@ -1,144 +1,300 @@
 ﻿
-
-
 @model TMApp.Models.Register
 @{
-    ViewBag.Title = "Register";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
-<div class="container">
-    <br /><br /><br />
-  
- 
-                <fieldset class="form-control-file" id="registerForm" style="border-radius:30px ;background-color:ghostwhite;
-                                     padding-left:30px; padding-top:30px;padding-right:30px;color:black">
-                    <br />
-                    <h3 class="bg-transparent" style="color:#000000; text-align:center; padding-top:10px">Sign Up</h3>
-                    <br />
 
-                    @using (Html.BeginForm("Register", "Register", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                    {
-                        @Html.AntiForgeryToken();
-                        <br /><br />
-          <div  class="form-group row" style="color:black;">
+<!doctype html>
+<html lang="en">
+<head>
 
-              <span>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="~/img/favicon.png" type="image/png">
+    <title>Task Manager</title>
+
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="~/vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/vendors/animate-css/animate.css">
+
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <link rel="stylesheet" href="~/css/main.css">
+</head>
+
+<body style="background: url(~/img/background/dot-pattern.jpg) repeat;">
 
 
-                  <img  id="UserImg" class="img-thumbnail" style="width:150px;height:150px" />
-              </span>
-             <br />
-             <span>
-                 <input class="form-control-file" id="UserimgId" type="file" accept="image/*" />
-             </span>
-             </div>
-             <br />
-
-                            <div class="form-group row">
-                                @Html.LabelFor(model => model.Name, new { @class = "col-sm-2 col-form-label" })
-
-                                <div class="col-sm-10">
+    <div data-overlay class="min-vh-100 d-flex flex-column justify-content-md-center o-hidden" style="padding-top: 80px !important;">
+        <section class="py-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-4 col-lg-5 col-md-6 mb-5 mb-md-0">
+                        <div class="card card-body shadow">
+                            <h1 class="h5 text-center" style="margin-bottom: 1rem;">Create Account</h1>
+                            @using (Html.BeginForm("Register", "Register", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken();
+                               
+                                <div class="form-group">
                                     @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Full name", @type = "Text", @required = "required", id = "txtName" })
                                     <p style="color:red"> @Html.ValidationMessageFor(model => model.Name)</p>
                                 </div>
-                            </div>
 
-
-                            <div class="form-group row">
-                                @Html.LabelFor(model => model.Email, new { @class = "col-sm-2 col-form-label" })
-                                <div class="col-sm-10">
-                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email",id="txtEmail", @type = "email", @required = "required" })
+                                <div class="form-group">
+                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email", id = "txtEmail", @type = "email", @required = "required" })
                                     <p style="color:red"> @Html.ValidationMessageFor(model => model.Email)</p>
                                 </div>
 
-                            </div>
-
-                            <div class="form-group row">
-                                @Html.LabelFor(model => model.Country, new { @class = "col-sm-2 col-form-label" })
-                                <div class="col-sm-10">
-                                    @Html.TextBoxFor(model => model.Country, new { @class = "form-control", @placeholder = "Country", @type = "Text", @required = "required", id = "txtCountry" })
-
-
+                                <div class="form-group">
+                               @Html.TextBoxFor(model => model.Country, new { @class = "form-control", @placeholder = "Country", @type = "Text", @required = "required", id = "txtCountry" })
+                                  <p style="color:red"> @Html.ValidationMessageFor(model => model.Country)</p>
                                 </div>
-                                <p style="color:red"> @Html.ValidationMessageFor(model => model.Country)</p>
-                            </div>
 
-                            <div class="form-group row">
-                                @Html.LabelFor(model => model.State, new { @class = "col-sm-2 col-form-label" })
-                                <div class="col-sm-10">
+                                <div class="form-group">
                                     @Html.TextBoxFor(model => model.State, new { @class = "form-control", @placeholder = "State", @type = "Text", @required = "required", id = "txtState" })
-
-
+                                       <p style="color:red"> @Html.ValidationMessageFor(model => model.State)</p>
                                 </div>
-                                <p style="color:red"> @Html.ValidationMessageFor(model => model.State)</p>
-                            </div>
-
-                            <div class="form-group row">
-                                @Html.LabelFor(model => model.PhoneNo, new { @class = "col-sm-2 col-form-label" })
-                                <div class="col-sm-10">
-                                    @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control", @placeholder = "Phone no", @type = "text", id="txtPhoneNo",@required = "required" })
-                                    <p style="color:red"> @Html.ValidationMessageFor(model => model.PhoneNo)</p>
-
-
+                                <div class="form-group form-inline">
+                                    <div class="form-inline">
+                                       <label class="form-control">Male</label>
+                                        @Html.RadioButtonFor(model => model.Gender,"Male")
+                                    </div>
+                                    <div class="form-inline">
+                                        <label class="form-control">Female</label>
+                                        @Html.RadioButtonFor(model => model.Gender,"Female")
+                                    </div>
+                                    @Html.ValidationMessageFor(model=>model.Gender)
+                                  
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
-                                @Html.LabelFor(model => model.Gender, new { @class = "col-sm-2 col-form-label" })
-                                <div class="col-sm-2">
-                                    @Html.Label("Female")
-                                    @Html.RadioButtonFor(model => model.Gender, "Female", new { @id = "female" })
-                                </div>
-                                <div class="col-sm-5">
-                                    @Html.Label("Male")
-                                    @Html.RadioButtonFor(model => model.Gender, "Male", new { @id = "male" })
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                @Html.LabelFor(model => model.Username, new { @class = "col-sm-2 col-form-label" })
-                                <div class="col-sm-10">
-                                    @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @placeholder = "Username",id="txtUsername", @type = "text", @required = "required" })
+                                <div class="form-group">
+                                    @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @placeholder = "Username", id = "txtUsername", @type = "text", @required = "required" })
                                     <p style="color:red"> @Html.ValidationMessageFor(model => model.Username)</p>
                                 </div>
 
-                            </div>
-
-                            <div class="form-group row">
-                                @Html.LabelFor(model => model.Password, new { @class = "col-sm-2 col-form-label", })
-
-                                <div class="col-sm-10">
-                                    @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @placeholder = "...........",id="txtPassword", @type = "password", @required = "required" })
-
+                                <div class="form-group">
+                                    @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @placeholder = "...........", id = "txtPassword", @type = "password", @required = "required" })
+                                    <small>Password must be at least 5 characters</small>
                                     <p style="color:red"> @Html.ValidationMessageFor(model => model.Password)</p>
-
-
+                                     
                                 </div>
-                                <div>
+                                <br />
 
+                                <div class="form-group">
+                                    <button @("Register") id="set" class="btn btn-primary" style="background-color: #db4c3f; border-color: #db4c3f;">Create Account</button>
+                                    <button id="RegCancel" class="btn btn-primary" style="background-color: #db4c3f; border-color: #db4c3f;">Cancel</button>
                                 </div>
-                            </div>
-                            <br />
-                            <div class="form-check" style="padding-left: 200px">
-                                <button class="btn" @("Register") id="set" style="background-color:lightsteelblue;color:black;width:80px;height:40px;font-size:large;">Sign up</button>
-                                <button class="btn" id="RegCancel" style="background-color:lightsteelblue;color:black;width:80px;height:40px;font-size:large;">Cancel</button>
+                                <div class="text-center text-small mt-3">
+                                    Already have an account? @Html.ActionLink("Sign up here","loginView","Login")
+                                </div>
                                 @Html.Raw(TempData["msg"])
                                 @Html.Raw(TempData["ErrorEmail"])
                                 @Html.Raw(TempData["ErrorUsername"])
                                 @Html.Raw(TempData["Error"])
                                 @Html.Raw(TempData["StringPLen"])
                                 @Html.Raw(TempData["StringUlen"])
+                                 @Html.Raw(TempData["UsernameError"])
+                          
+                            }
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 col-lg-auto ml-lg-5">
+                        <h2>Try MooDoo For Free </h2>
+                        <p>MooDoo is a very user-friendly tool for organizing simple to-do lists on the web. <br>It's heavily focused on tasks, and that's what the tool does best.<br> By signing up you are enjoying features like:</p>
+
+                        <div class="mb-3" data-aos="fade-left" data-aos-delay="300">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle bg-success-alt">
+                                    <i class="ti-angle-double-right"></i>
+                                </div>
+                                <h6 class="mb-0 ml-3">Set Your Task</h6>
                             </div>
-                            <br /><br /><br />
-                        
+                        </div>
+                        <div class="mb-3" data-aos="fade-left" data-aos-delay="400">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle bg-success-alt">
+                                    <i class="ti-angle-double-right"></i>
+                                </div>
+                                <h6 class="mb-0 ml-3">Email Reminder</h6>
+                            </div>
+                        </div>
+                        <div class="mb-3" data-aos="fade-left" data-aos-delay="500">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle bg-success-alt">
+                                    <i class="ti-angle-double-right"></i>
+                                </div>
+                                <h6 class="mb-0 ml-3">Help locate where the task will take place if needed</h6>
+                            </div>
+                        </div>
+                        <p>With Moodoo Task Manager, you can stay focused on their goals, projects, <br>and tasks—no matter when or where they work. Andriod and IOS coming soon. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <div class="background">
+        <div class="leftLarge">
+        </div>
+        <div class="rightLarge">
+        </div>
+    </div>
+
+
+
+
+    <script src="~/js/jquery-2.2.4.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/popper.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/bootstrap.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/vendors/owl-carousel/owl.carousel.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/jquery.ajaxchimp.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/waypoints.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/mail-script.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/contact.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/jquery.form.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/jquery.validate.min.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/mail-script.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+    <script src="~/js/theme.js" type="ab3c4cb7254640bc182b1ba0-text/javascript"></script>
+
+  
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="ab3c4cb7254640bc182b1ba0-|49" defer=""></script>
+</body>
+
+</html>
+
+
+@*<div class="container">
+
+
+    <div class="col-12">
+        <div class="row">
+            <div class="col-6">
+                <br /><br /><br />
+            <img class="bg-transparent" src="~/images/home/Personal-Assistant.png" style="height:80%;width:80%"/>
+            </div>
+            <div class="col-6">
+                <fieldset class="form-control-file" id="registerForm" style="border-radius:30px ;background-color:ghostwhite;
+                                     padding-left:30px; padding-top:30px;padding-right:30px;color:black">
+                    <br />
+                    <h3 class="bg-transparent" style="color:#000000; text-align:center; padding-top:10px">Sign Up</h3>
+                    <br />
+
+                    @using (Html.BeginForm("Register", "Register", FormMethod.Post,new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken();
+                        <br /><br />
+
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Name, new { @class = "col-sm-2 col-form-label" })
+
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Full name", @type = "Text", @required = "required", id = "txtName" })
+                                <p style="color:red"> @Html.ValidationMessageFor(model => model.Name)</p>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Email, new { @class = "col-sm-2 col-form-label" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email", id = "txtEmail", @type = "email", @required = "required" })
+                                <p style="color:red"> @Html.ValidationMessageFor(model => model.Email)</p>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Country, new { @class = "col-sm-2 col-form-label" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.Country, new { @class = "form-control", @placeholder = "Country", @type = "Text", @required = "required", id = "txtCountry" })
+
+
+                            </div>
+                            <p style="color:red"> @Html.ValidationMessageFor(model => model.Country)</p>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.State, new { @class = "col-sm-2 col-form-label" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.State, new { @class = "form-control", @placeholder = "State", @type = "Text", @required = "required", id = "txtState" })
+
+
+                            </div>
+                            <p style="color:red"> @Html.ValidationMessageFor(model => model.State)</p>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.PhoneNo, new { @class = "col-sm-2 col-form-label" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control", @placeholder = "Phone no", @type = "text", id = "txtPhoneNo", @required = "required" })
+                                <p style="color:red"> @Html.ValidationMessageFor(model => model.PhoneNo)</p>
+
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Gender, new { @class = "col-sm-2 col-form-label" })
+                            <div class="col-sm-2">
+                                @Html.Label("Female")
+                                @Html.RadioButtonFor(model => model.Gender, "Female", new { @id = "female" })
+                            </div>
+                            <div class="col-sm-5">
+                                @Html.Label("Male")
+                                @Html.RadioButtonFor(model => model.Gender, "Male", new { @id = "male" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Username, new { @class = "col-sm-2 col-form-label" })
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @placeholder = "Username", id = "txtUsername", @type = "text", @required = "required" })
+                                <p style="color:red"> @Html.ValidationMessageFor(model => model.Username)</p>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Password, new { @class = "col-sm-2 col-form-label", })
+
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @placeholder = "...........", id = "txtPassword", @type = "password", @required = "required" })
+
+                                <p style="color:red"> @Html.ValidationMessageFor(model => model.Password)</p>
+
+
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-check" style="padding-left: 200px">
+                            <button class="btn" @("Register") id="set" style="background-color:lightsteelblue;color:black;width:80px;height:40px;font-size:large;">Sign up</button>
+                            <button class="btn" id="RegCancel" style="background-color:lightsteelblue;color:black;width:80px;height:40px;font-size:large;">Cancel</button>
+                            @Html.Raw(TempData["msg"])
+                            @Html.Raw(TempData["ErrorEmail"])
+                            @Html.Raw(TempData["ErrorUsername"])
+                            @Html.Raw(TempData["Error"])
+                            @Html.Raw(TempData["StringPLen"])
+                            @Html.Raw(TempData["StringUlen"])
+                        </div>
+                        <br /><br /><br />
+
 
                     }
                 </fieldset>
-       
-
-
-      
-
+            </div>
+        </div>
     </div>
+
+    </div>*@
 
 

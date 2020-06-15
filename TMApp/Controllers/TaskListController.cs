@@ -9,17 +9,19 @@ namespace TMApp.Controllers
 {
     public class TaskListController : Controller
     {
-        // GET: TaskList
-        public ActionResult TaskList(String Pointer)
-        {
-            using (TMAppContext db = new TMAppContext())
-            {
-                var UserTask = db.ScheduleSetsTable.Find(Session["Email"]);
-              
-
-                return View(db.ScheduleSetsTable.ToList());
-            }
+        [HttpGet]
+        public ActionResult TaskList()
+        { 
             
+            using (TMAppContext db= new TMAppContext ())
+            {
+                string userEmail =Session["Email"].ToString();
+               var Tasklist = db.ScheduleSetsTable.Where(m => m.Email==userEmail).ToList();
+              
+                 return View(Tasklist);
+            }
+       
         }
+        
     }
 }

@@ -14,6 +14,7 @@ namespace TMApp.Models
         //public int id { get; set; }
         [Required(ErrorMessage ="This feild is required")]
         public string Name { get; set; }
+        [Required(ErrorMessage ="Select your gender")]
         public string Gender { get; set; }
         [Required(ErrorMessage = "This feild is required")]
         [Key]
@@ -38,8 +39,10 @@ namespace TMApp.Models
             MinLength(3,ErrorMessage ="Password must be at least 3 character")]
         public string Password { get; set; }
         public   DateTime DateRegistered { get; set; }
-        public byte[] ProfilePic { get; set; }
-        
+        public string ProfilePic { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase ImageFile { get; set; }
+
     }
     
    

@@ -10,7 +10,7 @@ namespace TMApp.Models
     public class Contact
     {
        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
+        public int Id { get; set; }
         [Required(ErrorMessage ="Fill this feild")]
         
         public string Name { get; set; }
