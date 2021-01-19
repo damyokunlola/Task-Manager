@@ -28,7 +28,7 @@
             <nav class="navbar navbar-expand-lg" style="background-color:mediumslateblue">
                 <div class="container">
 
-                    <a class="navbar-brand logo_h" href="index.html"><img src="~/img/logo.png" alt=""></a>
+                    @*<a class="navbar-brand logo_h" href="index.html"><img src="~/img/logo.png" alt=""></a>*@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -37,11 +37,12 @@
 
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item">@Html.ActionLink("Home", "Home", "Home", null, new { @class = "nav-link" })</li>
+                            @*<li class="nav-item">@Html.ActionLink("Home", "Home", "Home", null, new { @class = "nav-link" })</li>*@
                             <li class="nav-item">@Html.ActionLink("UserPage", "UserPage", "UserPage", null, new { @class = "nav-link" })</li>
                             <li class="nav-item">@Html.ActionLink("Set Task", "ScheduleSetView", "ScheduleSet", null, new { @class = "nav-link" })
                             <li class="nav-item">@Html.ActionLink("TaskList", "TaskList", "TaskList", null, new { @class = "nav-link" })</li>
                             <li class="nav-item">@Html.ActionLink("My Profile", "MyProfile", "Profile", null, new { @class = "nav-link" })</li>
+                         
 
                         </ul>
                     </div>
@@ -49,8 +50,8 @@
                         <ul>
 
 
-                            <li class="genric-btn danger">@Session["Email"].ToString()</li>
-                            @*<li class="genric-btn danger">@Html.ActionLink("Logout", "Home", "Home")</li>*@
+                            <li class="genric-btn" style="color:#ffffff">@Session["Email"].ToString()</li>
+                            <li class="genric-btn danger">@Html.ActionLink("Logout", "Logout", "UserPage")</li>
                         </ul>
                     </div>
                 </div>

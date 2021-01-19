@@ -44,6 +44,7 @@ namespace TMApp.Controllers
                 Edit.Country = NewRecord.Country;
                 Edit.Username = NewRecord.Username;
                 Edit.ProfilePic = NewRecord.ProfilePic;
+                Edit.LastUpdate = DateTime.Now;
               
                     
 

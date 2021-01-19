@@ -21,37 +21,42 @@ namespace TMApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ScheduleSet(ScheduleSet Task)
         {
-            TMAppContext db =  new TMAppContext();
-            ScheduleSet newTask = new ScheduleSet();
-            newTask.Description = Task.Description;
-            newTask.Categories = Task.Categories;
-            newTask.Date =Task.Date;
-            newTask.Location = Task.Location;
-             newTask.Email = Task.Email;
-            //newTask.Username = Task.Username;
-            //newTask.Password = Task.Password;
-            Task.Status = "Active";
-
-            var CheckUser = db.RegistersTable.Where(m=>m.Email.Equals(Task.Email));
-           // var CheckUser = db.RegistersTable.Where(m => m.Username.Equals(Task.Username) && m.Password.Equals(Task.Password)).FirstOrDefault();
-            if (CheckUser!=null)
+            if (ModelState.IsValid)
             {
-                db.ScheduleSetsTable.Add(newTask);
-                db.SaveChanges();
 
-                TempData["Msg"]="<script> alert('Task Successfully set');</script>";
-                return RedirectToAction("ScheduleSetView");
+
+                TMAppContext db = new TMAppContext();
+                ScheduleSet newTask = new ScheduleSet();
+                newTask.Description = Task.Description;
+                newTask.Categories = Task.Categories;
+                newTask.Date = Task.Date;
+                newTask.Location = Task.Location;
+                newTask.Email = Task.Email;
+                //newTask.Username = Task.Username;
+                //newTask.Password = Task.Password;
+                Task.Status = "Active";
+
+                var CheckUser = db.RegistersTable.Where(m => m.Email.Equals(Task.Email));
+                // var CheckUser = db.RegistersTable.Where(m => m.Username.Equals(Task.Username) && m.Password.Equals(Task.Password)).FirstOrDefault();
+                if (CheckUser != null)
+                {
+                    db.ScheduleSetsTable.Add(newTask);
+                    db.SaveChanges();
+
+                    TempData["Msg"] = "<script> alert('Task Successfully set');</script>";
+                    return RedirectToAction("ScheduleSetView");
+
+                }
+                else
+                {
+                    TempData["Errormsg"] = "<script> alert('Email not registered');</script>";
+                    return View("ScheduleSetView");
+                }
+
 
             }
-            else
-            {
-               TempData["Errormsg"]="<script> alert('Email not registered');</script>";
-               return View("ScheduleSetView");
-            }
-
-       
+            return View("ScheduleSetView");
         }
-
         
     }
 }

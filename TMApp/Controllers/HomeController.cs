@@ -20,6 +20,8 @@ namespace TMApp.Controllers
             db.RegistersTable.ToList();
             db.UserLoginsTable.ToList();
             db.ScheduleSetsTable.ToList();
+            db.EmailsTable.ToList();
+            db.ContactsTable.ToList();
         
             return View();
         }

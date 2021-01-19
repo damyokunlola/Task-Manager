@@ -1,0 +1,73 @@
+﻿@model TMApp.Models.Email
+@{
+    ViewBag.Title = "EmailView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+           using @Html.BeginForm("SendMail", "Email", FormMethod.Post)
+         {
+              Html.AntiForgeryToken()
+
+
+  <section id="contact-page">
+
+      <div class="container">
+          <br /><br /><br /><br />
+                             <div class="center">
+                              <h2>Task Reminder</h2>
+                              </div>
+
+          <div class="row contact-wrap">
+                          
+                       <div class="status alert alert-success" style="display: none"></div>
+                       <div class="col-md-6 col-md-offset-3">
+                           @*<div id="sendmessage">Mail Sent!</div>
+        <div id="errormessage"></div>*@
+                           <br />
+
+                           <div class="form-group row">
+                               @Html.LabelFor(model => model.Receiver, new { @class = "col-sm-2 col-form-label" })
+                               <div class="col-sm-10">
+                                   @Html.TextBoxFor(model => model.Receiver, new { @class = "form-control", name = "Receiver", placeholder = "Receiver" })
+
+                                   <p class="validation">@Html.ValidationMessageFor(model => model.Receiver) </p>
+                               </div>
+                           </div>
+
+                           <br />
+                           <div class="form-group row">
+                               @Html.LabelFor(model => model.Subject, new { @class = "col-sm-2 col-form-label" })
+                               <div class="col-sm-10">
+
+                                   @Html.TextBoxFor(model => model.Subject, new { @class = "form-control", name = "Subject", placeholder = "Subject" })
+
+                                   <div class="validation"></div>
+                               </div>
+
+                           </div>
+                           <br />
+
+                           <div class="form-group row">
+                               @Html.LabelFor(model => model.Body, new { @class = "col-sm-2 col-form-label" })
+                               <div class="col-sm-10">
+                                   @Html.TextAreaFor(model => model.Body, new { @class = "form-control", @row = "20", name = "Body", placeholder = "Body" })
+                                   <div class="validation"></div>
+                               </div>
+                           </div>
+                           <br />
+                           <div class="text-center"><button @("SendMail") type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Send mail</button></div>
+                           @Html.Raw(TempData["Msg"]);
+                           <br /><br /><br />
+                       </div>
+               
+             
+             </div>
+       
+    </div>
+    
+  
+    
+</section>
+}
+
+

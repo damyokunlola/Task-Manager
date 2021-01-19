@@ -18,9 +18,10 @@ namespace TMApp.Models
         public string Gender { get; set; }
         [Required(ErrorMessage = "This feild is required")]
         [Key]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         [Required(ErrorMessage = "This feild is required")]
-       
+       [DataType(DataType.PhoneNumber)]
         public double PhoneNo { get; set; }
 
         [Required(ErrorMessage = "This feild is required")]
@@ -37,11 +38,15 @@ namespace TMApp.Models
         [Required(ErrorMessage = "This feild is required")]
         [MaxLength(20,ErrorMessage ="Password can not be more than 20 character"),
             MinLength(3,ErrorMessage ="Password must be at least 3 character")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
+        [DataType(DataType.Date)]
         public   DateTime DateRegistered { get; set; }
         public string ProfilePic { get; set; }
         [NotMapped]
         public HttpPostedFileBase ImageFile { get; set; }
+        public DateTime LastLogin { get; set; }
+        public DateTime LastUpdate { get; set; }
 
     }
     

@@ -15,9 +15,9 @@ namespace TMApp.Controllers
             return View();
         }
 
-        public ActionResult Userlogout()
+        public ActionResult LogOut()
         {
-            //TempData["Logoutmsg"] = "<script> alert('Logging out?');</script>";
+         
 
             return RedirectToAction("Home","Home");
         }

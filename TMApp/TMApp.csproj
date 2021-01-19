@@ -60,6 +60,9 @@
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleCrypto, Version=26.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleCrypto.0.3.30.26\lib\SimpleCrypto.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -445,8 +448,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ConfigurationSmtp.cs" />
     <Compile Include="Controllers\ChangePwdController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -474,12 +479,27 @@
     <Compile Include="Migrations\202006110729251_VS.designer.cs">
       <DependentUpon>202006110729251_VS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006162304596_NewVS.cs" />
+    <Compile Include="Migrations\202006162304596_NewVS.designer.cs">
+      <DependentUpon>202006162304596_NewVS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006271853337_newww.cs" />
+    <Compile Include="Migrations\202006271853337_newww.designer.cs">
+      <DependentUpon>202006271853337_newww.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008221655420_Regmodelchanges.cs" />
+    <Compile Include="Migrations\202008221655420_Regmodelchanges.designer.cs">
+      <DependentUpon>202008221655420_Regmodelchanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BundleConfig.cs" />
     <Compile Include="Models\Contact.cs" />
-    <Compile Include="Models\Register.cs" />
-    <Compile Include="Models\ScheduleSet.cs" />
-    <Compile Include="Models\TMAppContext.cs" />
+    <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\Domain\Register.cs" />
+    <Compile Include="Models\Domain\ScheduleSet.cs" />
+    <Compile Include="Models\DbContext\TMAppContext.cs" />
+    <Compile Include="Models\UserComponent\IUserRepository.cs" />
+    <Compile Include="Models\UserComponent\UserRepository.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -523,6 +543,7 @@
     <Content Include="Views\Login\LoginView.cshtml" />
     <Content Include="Views\Home\AboutView.cshtml" />
     <Content Include="Views\ChangePwd\ChangePwdView.cshtml" />
+    <Content Include="Views\Email\EmailView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -555,6 +576,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006110729251_VS.resx">
       <DependentUpon>202006110729251_VS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006162304596_NewVS.resx">
+      <DependentUpon>202006162304596_NewVS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006271853337_newww.resx">
+      <DependentUpon>202006271853337_newww.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008221655420_Regmodelchanges.resx">
+      <DependentUpon>202008221655420_Regmodelchanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

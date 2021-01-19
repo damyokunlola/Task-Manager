@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TMApp.Models
 {
+    [Table("tblContacts")]
     public class Contact
     {
        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
